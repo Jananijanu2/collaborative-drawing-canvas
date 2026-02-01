@@ -1,0 +1,24 @@
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+button, input {
+  margin: 5px;
+  padding: 5px 10px;
+  border: 2px solid black;
+  color: red;
+}
+
+canvas {
+  border: 1px solid black;
+  background: white;
+  display: block;
+  margin: 15px auto;
+}
