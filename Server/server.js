@@ -17,15 +17,15 @@ io.on("connection", (socket) => {
   });
 
   socket.on("cursor", (position) => {
-    socket.broadcast.emit("cursor", { id: socket.id, ...position });
+    socket.broadcast.emit("cursor", position);
   });
 
   socket.on("undo", (removed) => {
-    socket.broadcast.emit("undo", removed);
+    io.emit("undo", removed);
   });
 
   socket.on("redo", (restored) => {
-    socket.broadcast.emit("redo", restored);
+    io.emit("redo", restored);
   });
 
   socket.on("disconnect", () => {
