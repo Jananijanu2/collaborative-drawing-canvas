@@ -1,4 +1,4 @@
-const connection = io();
+const connection = io("collaborative-drawing-canvas-production-50a8.up.railway.app");
 
 function shareLineEvent(prevMousePosition, exactSpot, color, width) {
   const drawData = {
