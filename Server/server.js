@@ -12,8 +12,9 @@ io.on("connection", (socket) => {
   console.log("User connected:", socket.id);
 
 
-  socket.on("drawing_step", (drawData) => {
-    socket.broadcast.emit("drawing_step", drawData);
+  socket.on("drawing_step", (data) => {
+    actions.push(data);
+    socket.broadcast.emit("drawing_step", data);
   });
 
   socket.on("cursor", (position) => {
@@ -34,7 +35,8 @@ io.on("connection", (socket) => {
 });
 
 
-server.listen(3000, () => {
-  console.log("Server running at http://localhost:3000");
+const PORT = process.env.PORT || 3000; 
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
